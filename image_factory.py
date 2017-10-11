@@ -25,7 +25,7 @@ def gen_images(gen_image_num, save_path):
 
 
 if __name__ == '__main__':
-    gen_image_num = 4000
+    gen_image_num = 10000
     save_path = 'experiments/gen_scene_images/'
     gen_images(gen_image_num, save_path)
 
