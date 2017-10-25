@@ -27,5 +27,5 @@ parser.add_argument('--n_extra_layers', type=int, default=0, help='Number of ext
 parser.add_argument('--experiment', default='gen_images', help='Where to store samples and models')
 parser.add_argument('--adam', action='store_true', help='Whether to use adam (default is rmsprop)')
 parser.add_argument('--list_file',default = '/home/bingzhe/datasets/scene/ai_challenger_scene_train_20170904/scene_train_annotations_20170904.json', help = 'list file')
-
+parser.add_argument("--num_classes", default =80, help = 'num of classes')
 opt = parser.parse_args()

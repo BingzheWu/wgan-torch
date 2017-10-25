@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from options import opt
-from models import netD, netG
+from models import netD, netG, acgan
 import torchvision.utils as vutils
 from torch.autograd import Variable
 import torch.nn.parallel
@@ -108,6 +108,10 @@ def train():
 				vutils.save_image(fake.data, '{0}/fake_samples_{1}.png'.format(opt.experiment, gen_iterations))
 		torch.save(net_g.state_dict(), '{0}/netG_epoch_{1}.pth'.format(opt.experiment, epoch))
 		torch.save(net_d.state_dict(), '{0}/netD_epoch_{1}.pth'.format(opt.experiment, epoch))
-			
+
+def main():
+	model_acgan = acgan(opt)
+	model_acgan.train()
+
 if __name__ == '__main__':
-	train()
+	main()

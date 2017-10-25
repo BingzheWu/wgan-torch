@@ -30,5 +30,5 @@ def scene_dataset(root_dir, list_file, is_train):
 		transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 	out = dataloader(root_dir, list_file, is_train, transform)
 	out = torch.utils.data.DataLoader(out, batch_size = opt.batchSize, shuffle = True, 
-		num_workers = int(opt.workers))
+		num_workers = int(opt.workers), drop_last = True)
 	return out

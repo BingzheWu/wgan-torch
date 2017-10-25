@@ -18,4 +18,6 @@ def upsample(in_c, out_c, k_size, strides, padding, name, alpha = 0.2,
 		out.add_module(name+'.norm', nn.BatchNorm2d(out_c))
 	out.add_module(name+'.activation', nn.LeakyReLU(alpha, inplace = True))
 	return out
-	
+def onehot(x, num_classes):
+	ones = torch.sparse.torch.eye(num_classes)
+	return ones.index_select(0, x)
