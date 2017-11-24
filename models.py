@@ -109,7 +109,6 @@ class acgan_d(nn.Module):
 		)
 		self.cl = nn.Sequential(
 			nn.Linear(out_feat, self.num_classes),
-			nn.Softmax(),
 		)
 	def forward(self, x):
 		x  = self.out(x)
